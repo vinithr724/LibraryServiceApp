@@ -25,19 +25,6 @@ public class BookService {
     }
     public Book createBook(Book book){
 
-        // call the database
-        //Integer bookId = new Random().nextInt();
-        //book.setBookId(bookId);
-        //bookMap.put(bookId, book);
-        /*LibraryBook libraryBook = new LibraryBook();
-        book.setBookId(libraryBook.getBookId());
-        book.setTitle(libraryBook.getTitle());
-        book.setAuthorName(libraryBook.getAuthorName());
-        book.setYearPublished(libraryBook.getYearPublished());
-        book.setQuantity(libraryBook.getQuantity());*/
-
-//        return  bookRepository.save(book);
-        // Create a new LibraryBook object
         LibraryBook libraryBook = new LibraryBook();
 
         // Manually map properties from Book to LibraryBook
@@ -97,10 +84,7 @@ public class BookService {
                     return bdo;
                 }).collect(Collectors.toList());
 
-        /*BookIsbnDTO bookIsbnDTO = new BookIsbnDTO();
-        bookIsbnDTO.setBookIsbn(libraryBook.getBookIsbn().getIsbn());
-        bookIsbnDTO.setBookId(libraryBook.getBookIsbn().getBookId());
-*/
+
         book.setBookIsbns(bookIsbnDTOS);
 
         return book;

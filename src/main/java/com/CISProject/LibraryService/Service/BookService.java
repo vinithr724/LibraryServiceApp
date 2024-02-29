@@ -135,6 +135,11 @@ public class BookService {
     }
 
     public void deleteBook(Integer bookId) {
-        bookRepository.deleteById(bookId);
+        Optional<LibraryBook> bookOptional = bookRepository.findById(bookId);
+        if (bookOptional.isPresent()) {
+            bookRepository.deleteById(bookId);
+        } else {
+            throw new IllegalArgumentException("Book with ID " + bookId + " not found");
+        }
     }
 }

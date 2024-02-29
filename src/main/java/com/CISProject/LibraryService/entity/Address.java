@@ -16,6 +16,6 @@ public class Address {
     private String city;
     private String state;
     private Integer zip;
-    @OneToMany(mappedBy = "address")
+    @OneToMany(mappedBy = "address",cascade = CascadeType.ALL)
     private List<LibraryMember> members;
 }

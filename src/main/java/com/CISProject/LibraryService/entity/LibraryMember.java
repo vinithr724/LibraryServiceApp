@@ -36,7 +36,7 @@ public class LibraryMember {
     @JoinColumn(name="address_id")
     private Address address;
 
-    @OneToMany(mappedBy = "libraryMember")
+    @OneToMany(mappedBy = "libraryMember", cascade = CascadeType.ALL)
     private List<Checkout> checkouts;
 
     // lombok
@@ -44,39 +44,3 @@ public class LibraryMember {
 
 
 }
-
-
-// xml for mapping , connection details
-// url , username, password and driver name
-
-// mapping, dependencies, connection properties
-// JPA REPOSITORIES
-// autowire and use it in service layer
-
-
-
-
-// query, execute
-// EntityManager, EntityManagerFactory -
-// execute, executeUpdate , list,
-
-
-
-    // lombok
-
-
-
-
-// xml for mapping , connection details
-// url , username, password and driver name
-
-// mapping, dependencies, connection properties
-// JPA REPOSITORIES
-// autowire and use it in service layer
-
-
-
-
-// query, execute
-// EntityManager, EntityManagerFactory -
-// execute, executeUpdate , list,

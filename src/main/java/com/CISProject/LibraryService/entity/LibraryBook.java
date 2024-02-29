@@ -24,15 +24,6 @@ public class LibraryBook {
     @Column(name="quantity")
     private Integer quantity;
 
-    @OneToMany(mappedBy = "libraryBook")
+    @OneToMany(mappedBy = "libraryBook", cascade = CascadeType.ALL)
     private List<BookIsbn> bookIsbns;
 }
-
-
-// xml for mapping , connection details
-// url , username, password and driver name
-
-// mapping, dependencies, connection properties
-// JPA REPOSITORIES
-// autowire and use it in service layer
-

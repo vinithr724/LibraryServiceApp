@@ -1,6 +1,6 @@
 package com.CISProject.LibraryService.Controller;
 import com.CISProject.LibraryService.entity.LibraryMember;
-//import com.cis.batch33.library.model.Member;
+//import com.CISProject.LibraryService.model.Member;
 import com.CISProject.LibraryService.model.Member;
 import com.CISProject.LibraryService.Service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,14 +20,14 @@ public class MemberController {
 
     // create a member
     @PostMapping
-    public LibraryMember createMember(@RequestBody  LibraryMember member){
+    public Member createMember(@RequestBody  Member member){
         return memberService.createMember(member);
     }
 
     @PutMapping
-    public LibraryMember updateMember(@RequestBody LibraryMember LibraryMember){
+    public Member updateMember(@RequestBody Member Member){
         // Set the memberId for the member object to be updated
-        return memberService.updateMember(LibraryMember);
+        return memberService.updateMember(Member);
     }
 
     @DeleteMapping
